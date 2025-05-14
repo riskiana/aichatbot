@@ -1,0 +1,6 @@
+spring:
+  ai:
+    openai:
+      api-key: YOUR-OPENAI-API-KEY
+  application:
+    name: aichatbot
