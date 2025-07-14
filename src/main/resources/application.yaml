@@ -1,6 +1,10 @@
 spring:
   ai:
     openai:
-      api-key: YOUR-OPENAI-API-KEY
+      api-key: ${OPENAI_API_KEY}
+     # chat:
+      #  options:
+          #max-tokens: 4800
+          #model: gpt-4o
   application:
     name: aichatbot
