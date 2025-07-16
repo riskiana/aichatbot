@@ -3,6 +3,7 @@ package com.riskiana.aichatbot;
 import org.springframework.ai.chat.client.ChatClient;
 import org.springframework.ai.chat.model.ChatModel;
 import org.springframework.ai.chat.model.ChatResponse;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -13,8 +14,8 @@ import reactor.core.publisher.Flux;
 public class ChatController {
   private final ChatClient chatClient;
 
-  public ChatController(ChatModel chatModel) {
-    this.chatClient = ChatClient.builder(chatModel).build();
+  public ChatController(@Qualifier("openAIChatClient") ChatClient chatClient) {
+    this.chatClient = chatClient;
 
   }
 
